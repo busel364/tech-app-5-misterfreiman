@@ -65,15 +65,21 @@ const Header = () => {
                 <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" expanded={isOn} className='pt-2 '>
                     <Container>
                         <Navbar.Brand href="#home" className='p-0 m-0 container' style={{ width: '160px' }}>
-                            <div className='container row row-cols-2'>
+                            {/* <div className='container row row-cols-2'>
                                 <div className='col-6'>
                                     <img src={`${require('../../utils/imgs/domw.png')}`} alt='logo' style={{ width: '70px', padding: '0' }} />
-                                    {/* <p></p><p></p> */}
                                 </div>
                                 <div className='col-6'>
                                     <p className='m-0 p-0 pLogo pLogo1'>Mister Freiman</p>
                                     <p className='m-0 p-0 pLogo'><i>תמיד בשבילך</i></p>
                                 </div>
+                            </div> */}
+                            <div className='container-fluid row ms-0 ps-0' style={{ width: '340px' }}>
+                                <img
+                                    className='col-9 col-sm-12 imgLogo ps-0'
+                                    src={require('../../utils/imgs/WhiteOnTransparent.png')}
+                                    alt='logo'
+                                    title='Mister Freiman' />
                             </div>
                         </Navbar.Brand>
                         <div onClick={() => setIsOn(prev => !prev)}>
