@@ -1,39 +1,259 @@
 .App {
+  font-family: sans-serif;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  display: block;
+  box-shadow: 0 3px 10px;
+  transition: top 1s;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-float infinite 3s ease-in-out;
+.headerHidden {
+  top: -280px;
+}
+
+.headerBlock {
+  display: block;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.headerBlockNone {
+  display: none;
+}
+
+.navItem,
+.settings {
+  font-size: 1.5rem;
+  font-weight: 100;
+  /* color: rgb(241, 241, 244); */
+}
+
+.navItem:hover,
+.settings:hover {
+  color: white;
+}
+
+.navItem::after {
+  display: block;
+  content: '';
+  margin: auto;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s;
+}
+
+.navItem:hover::after {
+  width: 100%;
+}
+
+.linkServiceItem::after {
+  display: block;
+  content: '';
+  margin: auto;
+  width: 0;
+  height: 2px;
+  background-color: black;
+  transition: width 0.3s;
+  position: relative;
+  z-index: 20;
+}
+
+.linkServiceItem:hover::after {
+  width: 100%;
+}
+
+.linkServiceItem {
+  text-decoration: none;
+}
+
+.linkServiceItem p {
+  text-decoration: none;
+  color: black;
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.customCarousel {
+  background-color: rgb(32, 37, 41);
+  padding-top: 10px;
+  overflow-y: hidden;
+}
+
+.customCarouselFirst {
+  height: 94vh;
+  background-image: url('/src/utils/imgs/carouselImg1.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.customCarouselSecond {
+  height: 94vh;
+  background-image: url('/src/utils/imgs/fonstola.ru_49637.jpg');
+  /* background-image: url('https://www.fonstola.ru/pic/201111/2560x1440/fonstola.ru_49637.jpg'); */
+  background-size: cover;
+  background-position: center;
+}
+
+.customCarouselThird {
+  height: 94vh;
+  background-image: url('/src/utils/imgs/109-2-05082021_134012-scaled.jpg');
+  /* background-image: url('https://remont21veka.ru/wp-content/uploads/2021/05/109-2-05082021_134012-scaled.jpg'); */
+  background-size: cover;
+  background-position: center;
+}
+
+.btnContact {
+  width: 200px;
+  font-size: 1.4rem;
+  background-color: inherit;
+  border: 2px solid whitesmoke;
+  color: whitesmoke;
+  transition: 0.5s;
+}
+
+.btnContact>a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+.btnContact:hover {
+  background-color: whitesmoke;
+  transition: 0.3s;
+  color: #333;
+}
+
+.btnContact:hover>a {
+  color: #333;
+}
+
+.inputs,
+textarea {
+  color: whitesmoke;
+  width: 300px;
+  margin: 5px 0;
+  outline: none;
+  font-size: 1.25rem;
+  background-color: #333;
+  border: 0;
+  /* border-bottom: 2px solid whitesmoke; */
+}
+
+.inputs::placeholder,
+textarea::placeholder {
+  color: whitesmoke;
+}
+
+/* .inputs:focus,textarea:focus {
+  border-bottom: 2px solid whitesmoke;
+} */
+
+/* .inputs:hover,textarea:hover{
+  border-bottom: 2px solid whitesmoke;
+} */
+
+.divInputs {
+  width: 300px;
+  margin: 8px auto;
+}
+
+.divInputs::after {
+  display: block;
+  content: '';
+  margin: auto;
+  width: 0;
+  height: 2px;
+  background-color: whitesmoke;
+  transition: width 0.3s;
+  position: relative;
+  z-index: 20;
+}
+
+.divInputs:hover::after {
+  width: 100%;
+}
+
+.divInputs {
+  border-bottom: 2px solid whitesmoke;
+}
+
+/* .fakeDiv{
+    display: block;
+    height: 180px;
+  } */
+
+/* .pContact1{
+    margin-bottom: 180px;
+  } */
+
+.pContact1 {
+  font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .fakeDiv {
+    display: none;
+  }
+
+  .pContact1 {
+    margin-bottom: 0;
   }
 }
 
-.App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+@media only screen and(min-width: 768px) {
+  .fakeDiv {
+    display: block;
+    height: 180px;
+  }
+
+  .pContact1 {
+    margin-bottom: 180px;
+  }
 }
 
-.App-link {
-  color: rgb(112, 76, 182);
+.titleCarousel {
+  /* padding-top: 20px; */
+  font-size: 2rem;
+  font-weight: 200;
+  color: whitesmoke;
 }
 
-@keyframes App-logo-float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+.titleCarouselv2 {
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+
+.pAboutUs {
+  font-size: 1.5rem;
+  font-weight: 340;
+}
+
+.pLogo{
+  font-weight: 200;
+  font-size: 1.3rem;
+  text-decoration-line: underline;
+}
+
+.pLogo1{
+  position: relative;
+  top: 6px;
+  text-decoration: none;
+}
+
+.pServiceDescription{
+  /* overflow-y: scroll; */
+  font-size: 0.8rem;
+}
+
+.divServiceDescription{
+  background-size: cover;
+  background-position: center;
 }
